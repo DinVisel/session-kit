@@ -22,5 +22,8 @@ docs/
 # Ignore node_modules
 node_modules/
 
+# TypeScript build output
+dist/
+
 # Local Claude Code settings
 .claude/
