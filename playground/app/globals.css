@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+@theme {
+  --color-surface-void: #07080d;
+  --color-surface-panel: #0d1017;
+  --color-border-hairline: #1c2130;
+
+  --color-accent-cyan: #22d3ee;
+  --color-accent-amber: #f59e0b;
+  --color-accent-gold: #fbbf24;
+  --color-accent-danger: #f43f5e;
+
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-jetbrains-mono);
+}
+
+body {
+  background-color: var(--color-surface-void);
+  color: #e6e9f2;
+}
+
+@keyframes boss-shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-6px) rotate(-1deg);
+  }
+  40% {
+    transform: translateX(5px) rotate(1deg);
+  }
+  60% {
+    transform: translateX(-3px);
+  }
+  80% {
+    transform: translateX(3px);
+  }
+}
+
+@keyframes chest-bounce {
+  0% {
+    transform: scale(1) translateY(0);
+  }
+  40% {
+    transform: scale(1.08) translateY(-6px);
+  }
+  100% {
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes damage-float {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+}
+
+@keyframes scanline-sweep {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+.animate-boss-shake {
+  animation: boss-shake 320ms ease-in-out;
+}
+
+.animate-chest-bounce {
+  animation: chest-bounce 500ms ease-out;
+}
+
+.animate-damage-float {
+  animation: damage-float 900ms ease-out forwards;
+}
+
+.animate-scanline-sweep {
+  animation: scanline-sweep 6s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-boss-shake,
+  .animate-chest-bounce,
+  .animate-damage-float,
+  .animate-scanline-sweep {
+    animation: none !important;
+  }
+}

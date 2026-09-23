@@ -25,5 +25,10 @@ node_modules/
 # TypeScript build output
 dist/
 
+# Next.js (playground/)
+.next/
+next-env.d.ts
+*.tsbuildinfo
+
 # Local Claude Code settings
 .claude/
