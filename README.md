@@ -23,6 +23,12 @@ placeholders for experimentation only.
   actions silently with the temporary session key.
 - **`api/server.ts`** — a minimal Express relayer that verifies a
   session-signed payload and would forward it on-chain on the user's behalf.
+- **`sessionkit-sdk/`** — the ideas above packaged as a small TypeScript SDK,
+  [`@sessionkit/sdk`](sessionkit-sdk), with session lifecycle events, budget
+  and expiry guards, and a graceful offline-relayer fallback.
+- **`playground/`** — a runnable Next.js demo of the SDK: a mini "Dungeon
+  Boss Raid" that puts a wallet-popup-per-move legacy flow side by side with
+  SessionKit's authorize-once flow. See [`playground/README.md`](playground/README.md).
 
 ## Foundry
 
@@ -66,3 +72,18 @@ npm install
 
 `app/client.ts` and `api/server.ts` are illustrative snippets, not a wired-up
 runnable app yet — see the source for the intended flow.
+
+## Playground
+
+For a runnable demo, see [`playground/`](playground):
+
+```shell
+cd playground
+npm install
+npm run dev
+```
+
+Opens on [http://localhost:3001](http://localhost:3001) (the root relayer
+above keeps `:3000`) — no `.env` file required, the demo runs fully offline
+by default. Details, env vars, and the relayer fallback tiers are in
+[`playground/README.md`](playground/README.md).
