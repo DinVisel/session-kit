@@ -17,7 +17,7 @@ export function QuickLinks() {
           href={href}
           target="_blank"
           rel="noreferrer"
-          className="inline-flex items-center gap-1.5 rounded-md border border-[var(--color-border-hairline)] px-3 py-1.5 text-xs text-slate-300 transition-colors hover:bg-white/5"
+          className="inline-flex items-center gap-1.5 rounded-md border border-[var(--color-border-hairline)] px-3 py-1.5 text-xs text-slate-300 transition-colors hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent-cyan)]"
         >
           <Icon className="h-3.5 w-3.5" />
           {label}

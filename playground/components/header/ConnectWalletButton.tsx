@@ -16,12 +16,19 @@ export function ConnectWalletButton() {
   }
 
   return (
-    <Button variant="cyan" onClick={wallet.connect} disabled={wallet.isConnecting}>
-      {wallet.isConnecting
-        ? "Connecting…"
-        : wallet.hasWallet
-          ? "Connect Wallet"
-          : "No Wallet Detected"}
-    </Button>
+    <div className="flex flex-col items-end gap-1">
+      <Button variant="cyan" onClick={wallet.connect} disabled={wallet.isConnecting}>
+        {wallet.isConnecting
+          ? "Connecting…"
+          : wallet.hasWallet
+            ? "Connect Wallet"
+            : "No Wallet Detected"}
+      </Button>
+      {wallet.error && (
+        <p role="status" className="max-w-[220px] text-right text-xs text-[var(--color-accent-danger)]">
+          {wallet.error}
+        </p>
+      )}
+    </div>
   );
 }

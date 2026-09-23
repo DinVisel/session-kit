@@ -13,7 +13,7 @@ export function SessionHud({ session, onRevoke }: { session: SessionState; onRev
         <button
           type="button"
           onClick={onRevoke}
-          className="text-xs text-slate-500 underline decoration-dotted hover:text-slate-300"
+          className="rounded text-xs text-slate-500 underline decoration-dotted hover:text-slate-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent-cyan)]"
         >
           Revoke
         </button>

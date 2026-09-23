@@ -33,7 +33,7 @@ export function ConsoleLine({ line }: { line: ConsoleLineType }) {
               href={`https://sepolia.etherscan.io/tx/${hashMatch[0]}`}
               target="_blank"
               rel="noreferrer"
-              className="underline decoration-dotted underline-offset-2 hover:text-white"
+              className="rounded underline decoration-dotted underline-offset-2 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent-cyan)]"
             >
               {hashMatch[0]}
             </a>

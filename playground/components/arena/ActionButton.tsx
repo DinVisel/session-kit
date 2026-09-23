@@ -28,9 +28,16 @@ export function ActionButton({
     </Button>
   );
 
-  if (disabled && disabledReason) {
-    return <Tooltip content={disabledReason}>{button}</Tooltip>;
-  }
+  if (!disabled || !disabledReason) return button;
 
-  return button;
+  return (
+    <div className="flex flex-col gap-1.5">
+      {/* Tooltip covers hover/focus; the text below covers touch, where a hover
+          tooltip is unreachable. */}
+      <Tooltip content={disabledReason}>{button}</Tooltip>
+      <p className="text-center text-xs text-slate-500" role="status">
+        {disabledReason}
+      </p>
+    </div>
+  );
 }

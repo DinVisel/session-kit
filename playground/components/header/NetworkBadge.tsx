@@ -14,7 +14,7 @@ export function NetworkBadge() {
 
   if (wallet.isWrongNetwork) {
     return (
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-2" title="Your wallet is on a different network. The demo still runs fully offline either way — switching only matters for the live on-chain path.">
         <Badge tone="amber">
           <AlertTriangle className="h-3 w-3" />
           Wrong network
